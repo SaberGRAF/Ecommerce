@@ -12,10 +12,18 @@
     <title>Hello, world!</title>
 </head>
 <body>
-<div class="container" >
-    <div class="row text-center">
+
+<div class="text-center">
+    <h1>{{ title }}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
         <div class="col">
-            <h1>{{ title }}</h1>
+            <form method="POST"> {% csrf_token %}
+                {{ form }}
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
         </div>
     </div>
 </div>
