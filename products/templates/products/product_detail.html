@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Product detail</title>
-</head>
-<body>
-    {{ object.title }} <br>
-    {{ object.description }} <br>
-    {{ object.price }} <br>
-    <img src="{{ object.image.url }}" class="img-fluid" alt="image">
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            {{ object.title }} <br>
+            {{ object.description }} <br>
+            {{ object.price }} <br>
+            {% if object.image %}
+            <img src="{{ object.image.url }}" class="img-fluid" alt="image">
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
